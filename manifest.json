@@ -1,7 +1,7 @@
 {
   "id": "bookers_heaven",
   "name": "Booker's Heaven",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "api": 2,
   "entry": "main.lua",
   "profile": "content",

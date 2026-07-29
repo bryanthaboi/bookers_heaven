@@ -20,5 +20,30 @@ return function(mod)
       { x = 12, y = 11, destMap = "OAKS_LAB", destWarp = 2 },
       { x = 23, y = 15, destMap = "BOOKERS_HEAVEN", destWarp = 1 },
     },
+    -- __append keeps the three vanilla objects (PALLETTOWN_OAK index 1,
+    -- GIRL 2, FISHER 3); a bare list would replace them, since maps merge
+    -- with record semantics.  Index 4 is the first free object slot.
+    --
+    -- This is deliberately NOT the vanilla PALLETTOWN_OAK: the intro
+    -- cutscene (data/scripts/story2.lua) shows/hides/walks that one from
+    -- (8,5), so borrowing it would leave the escort standing in the wrong
+    -- place.  Ours is its own object, hidden until the gate scene runs and
+    -- hidden again the moment it ends.  The def coordinates are only a
+    -- spawn point -- the scene relocates him next to the player with
+    -- place_npc, and show_object rebuilds the NPC from this def every
+    -- time, so the relocation never sticks.
+    objects = { __append = {
+      {
+        hidden = true,
+        index = 4,
+        movement = "STAY",
+        name = "PALLETTOWN_OAK_GATE",
+        range = "RIGHT",
+        sprite = "SPRITE_OAK",
+        text = "TEXT_PALLETTOWN_OAK_GATE",
+        x = 18,
+        y = 5,
+      },
+    } },
   })
 end

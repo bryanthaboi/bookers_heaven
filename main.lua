@@ -3,13 +3,16 @@
 -- the other trash can gets you jumped by a level 80 RATICATE called BOOKER.
 --
 --
--- The two maps are exported from Tiled (maps/*.lua); everything scripted
--- lives here.
+-- The two maps are exported from Tiled (maps/*.lua); the room's own
+-- scripting lives here, and the east-wing gate scene (OAK turning you
+-- back until you own a POKéMON) in scripts/oak_gate.lua.
 
--- Applied in order: the new map registers before the patch that warps into it.
+-- Applied in order: the new map registers before the patch that warps into
+-- it, and the gate scene last -- it hooks the map the patch just widened.
 local FILES = {
   "maps/BOOKERS_HEAVEN.lua",
   "maps/PALLET_TOWN.lua",
+  "scripts/oak_gate.lua",
 }
 
 local TRASH_TEXT = "TEXT_BOOKERSHEAVEN_TRASH"
