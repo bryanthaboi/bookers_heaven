@@ -2,6 +2,7 @@
 -- into BOOKER'S HEAVEN -- a room you enter through a trash can, where reading
 -- the other trash can gets you jumped by a level 80 RATICATE called BOOKER.
 --
+--
 -- The two maps are exported from Tiled (maps/*.lua); everything scripted
 -- lives here.
 
